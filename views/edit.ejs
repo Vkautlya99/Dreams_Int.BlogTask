@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Blog Webapp</title>
         <link rel="stylesheet" href="stylesheets/style.css">
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
@@ -29,17 +29,17 @@
                 <div class=" h-full w-full p-4 text-white bg-gray-900 gap-4">
 
                     <article class="mb-3 text-blue-500">
-                        <h3><a href="/read">Read users</a></h3>
+                        <h3><a href="/read">Read blogs</a></h3>
                     </article>
 
-                    <h1 class="text-3xl font-bold mb-6 justify-center items-center ml-[540px]">Update User</h1>
+                    <h1 class="text-3xl font-bold mb-6 justify-center items-center ml-[540px]">Update blog</h1>
                     <form action="/update/<%= user.id%>" method="post">
                         <input
                             class="px-10 mt-4 py-3 border-2 border-zinc-800 bg-transparent outline-none rounded-lg ml-[500px]"
                             type="text" placeholder="name" name="name" value="<%= user.name%>">
                         <input
                             class="px-10 py-3  border-2 border-zinc-800 bg-transparent outline-none rounded-lg flex  ml-[500px] flex-col gap-y-4 mt-2"
-                            type="email" placeholder="email" name="email" value="<%= user.email%>">
+                            type="text" placeholder="edit this blog" name="blog" value="<%= user.blog%>">
                         <input
                             class="px-10 py-3 border-2 border-zinc-800 bg-transparent outline-none rounded-lg flex  ml-[500px] flex-col gap-y-4 mt-2"
                             type="text" placeholder="imageUrl" name="image" value="<%= user.image%>">
@@ -49,7 +49,7 @@
 
                         <input
                             class="px-[75px] py-3 text-xl text-gyey font-bold border-none bg-yellow-600 outline-none rounded-lg flex  ml-[500px] flex-col gap-y-4 mt-4 mb-"
-                            type="submit" name="Update" value="Update User">
+                            type="submit" name="Update" value="Update Blog">
                     </form>
                 </div>
 

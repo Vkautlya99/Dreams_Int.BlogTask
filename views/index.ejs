@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Blog webapp</title>
         <link rel="stylesheet" href="stylesheets/style.css">
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
@@ -29,15 +29,15 @@
                 <div class="w-full h-full p-6 text-white bg-zinc-900 gap-4">
 
                     <article class="mb-3 text-blue-500">
-                        <h3><a href="/read">Read users</a></h3>
+                        <h3><a href="/read">Read blogs</a></h3>
                     </article>
                 
-                    <h1 class="text-3xl font-bold mt-10 mb-6 justify-center items-center ml-[540px]">Create User</h1>                   
+                    <h1 class="text-3xl font-bold mt-10 mb-6 justify-center items-center ml-[540px]">Create Blog</h1>                   
                         <form action="/create" method="post">
                             <input class="px-10 py-3 border-2 border-zinc-800 bg-transparent outline-none rounded-lg ml-[500px]"
                                 type="text" placeholder="name" name="name">
                             <input class="px-10 py-3  border-2 border-zinc-800 bg-transparent outline-none rounded-lg flex  ml-[500px] flex-col gap-y-4 mt-2"
-                                type="email" placeholder="email" name="email">
+                                type="text" placeholder="write your favourite blog" name="blog">
                             <input class="px-10 py-3 border-2 border-zinc-800 bg-transparent outline-none rounded-lg flex  ml-[500px] flex-col gap-y-4 mt-2"
                                 type="text" placeholder="imageUrl" name="image">
                             <input class="px-10 py-3 border-2 border-zinc-800 bg-transparent outline-none rounded-lg flex  ml-[500px] flex-col gap-y-4 mt-2 mb-6"

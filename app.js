@@ -14,13 +14,28 @@ app.get("/", (req, res) => {
 });
 
 app.get("/create", (req, res) => {
-    res.render("index"); // Make sure you have a 'create.ejs' file in your views folder
+    res.render("index");
 });
 
+// Create user
+app.post("/create", async (req, res) => {
+    const { name, blog, password, image } = req.body;
+    await userModel.create({
+        name,
+        blog,
+        password,
+        image
+    });
+    res.redirect("/read");
+});
+
+// Read user
 app.get("/read", async (req, res) => {
     const users = await userModel.find();
     res.render("read", { users });
 });
+
+
 
 // Edit User
 app.get("/edit/:userid", async (req, res) => {
@@ -28,12 +43,7 @@ app.get("/edit/:userid", async (req, res) => {
     res.render("edit", { user });
 });
 
-// Update User
-app.post("/update/:userid", async (req, res) => {
-    const { name, email, password, image } = req.body;
-    await userModel.findOneAndUpdate({ _id: req.params.userid }, { name, email, image, password }, { new: true });
-    res.redirect("/read");
-});
+
 
 // Delete User
 app.get("/delete/:id", async (req, res) => {
@@ -41,16 +51,7 @@ app.get("/delete/:id", async (req, res) => {
     res.redirect("/read");
 });
 
-app.post("/create", async (req, res) => {
-    const { name, email, password, image } = req.body;
-    await userModel.create({
-        name,
-        email,
-        password,
-        image
-    });
-    res.redirect("/read");
-});
+
 
 app.listen(3000, () => {
     console.log(`App is running on port 3000`);
