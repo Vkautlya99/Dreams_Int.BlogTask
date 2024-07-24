@@ -61,7 +61,7 @@ app.post("/login", async (req, res) => {
     res.json({ token });
 });
 
-// Middleware to verify JWT
+// verifying JWT
 const authenticateJWT = (req, res, next) => {
     const token = req.header("Authorization").replace("Bearer ", "");
 
